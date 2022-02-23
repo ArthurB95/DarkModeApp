@@ -1,33 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import { EventRegister } from "react-native-event-listeners";
-import { NavigationContainer, DarkTheme, DefaultTheme } from "@react-navigation/native";
+import Home from "./src/Home";
+import themes from './src/theme';
 
-import theme from "./config/theme";
-import themeContext from "./config/themeContext";
-import AppNavigator from "./navigation/AppNavigator";
+import { useColorScheme } from "react-native";
+import { ThemeProvider } from "styled-components";
+
 
 export default function App() {
-  const [mode, setMode] = useState(false);
+ 
+  const deviceTheme = useColorScheme();
 
-  useEffect(() => {
-    let eventListener = EventRegister.addEventListener(
-      "changeTheme",
-      (data) => {
-        setMode(data);
-      }
-    );
-
-    return () => {
-      EventRegister.removeEventListener(eventListener);
-    };
-  });
+  const theme = themes[deviceTheme] || theme.dark
 
   return (
-    <themeContext.Provider value={mode === true ? theme.dark : theme.light}>
-      <NavigationContainer theme = {mode === true ? DarkTheme : DefaultTheme}>
-        <AppNavigator />
-      </NavigationContainer>
-    </themeContext.Provider>
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
   );
 }
