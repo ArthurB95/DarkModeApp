@@ -17,7 +17,7 @@
 
 <p>O aplicativo tem como intenção demonstrar os temas dark e light acionando o botão switch e o tema deve ser acionado em todas as páginas do app.</p>
 
-<h1>Configurações do projeto</h1>
+<h1>⚙ Configurações do projeto</h1>
 
 <ul>
 <li>O app foi desenvolvido totalmente com o Expo. Link: <a href='https://docs.expo.dev/'>https://docs.expo.dev/</a> </li>
@@ -25,3 +25,7 @@
 <li>Foi utilizado o React Navigation: <a href='https://reactnavigation.org/docs/getting-started/'>https://reactnavigation.org/docs/getting-started/</a></li>
 <li>Caso clone o projeto não se esqueça de utilizar o comando Yarn Install ou NPM Install</li>
 </ul>
+
+<hr>
+
+<p>Obrigado por acessar este repositório e bom desenvolvimento 😄</p>
